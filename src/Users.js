@@ -1,19 +1,67 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
-import swal from 'sweetalert';
-import usContext from './Usercontext';
 
-function Table() {
-    const userContext = useContext(usContext);
+function Users() {
+    let users = [
+        {
+            Name: "Raja",
+            Position: "FSD",
+            Office: "Amazon",
+            Age: 23,
+            StartDate: "30.03.2022",
+            Salary: 55000,
+        },
+        {
+            Name: "Sai Guru",
+            Position: "Executive",
+            Office: "Accenture",
+            Age: 24,
+            StartDate: "30.03.2022",
+            Salary: 35000,
+        },
+        {
+            Name: "Jonathan",
+            Position: "FSD",
+            Office: "Amazon",
+            Age: 25,
+            StartDate: "30.03.2022",
+            Salary: 55000,
+        },
+        {
+            Name: "Rajesh",
+            Position: "Testing",
+            Office: "TCS",
+            Age: 23,
+            StartDate: "30.03.2022",
+            Salary: 55000,
+        },
+        {
+            Name: "Vignesh",
+            Position: "FSD",
+            Office: "Infosys",
+            Age: 25,
+            StartDate: "30.03.2022",
+            Salary: 55000,
+        },
+        {
+            Name: "Tamizh",
+            Position: "Developer",
+            Office: "Google",
+            Age: 23,
+            StartDate: "30.03.2022",
+            Salary: 55000,
+        },
+    ]
+
     return (
         <div class="container-fluid">
 
             {/* <!-- Page Heading --> */}
 
             <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                <h1 class="h3 mb-0 ms-3 text-gray-800">Tables</h1>
+                <h1 class="h3 mb-0 ms-3 text-gray-800">User Lists</h1>
                 <Link to={"/create-user"} class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm me-3"><i
-                    class="fas fa-download fa-sm text-white-50"></i> Create User</Link>
+                    class=" fa-sm text-white-50"></i> Create User</Link>
             </div>
 
 
@@ -49,16 +97,18 @@ function Table() {
                             </tfoot>
                             <tbody>
                                 {
-                                    userContext.users.map((user) => {
+                                    users.map((user) => {
                                         return <tr>
                                             <td>{user.Name}</td>
                                             <td>{user.Position}</td>
                                             <td>{user.Office}</td>
                                             <td>{user.Age}</td>
-                                            <td>{user.StateDate}</td>
+                                            <td>{user.StartDate}</td>
                                             <td>{user.Salary}</td>
                                             <td>
-                                                <Link to={`/view/${user.Name}`} className='btn btn-warning btn-sm'>View</Link>
+                                                <button className='btn btn-warning btn-sm'>View</button>
+                                                <button className='btn btn-primary btn-sm m-1'>Edit</button>
+                                                <button className='btn btn-danger btn-sm'>Delete</button>
 
                                             </td>
                                         </tr>
@@ -75,4 +125,4 @@ function Table() {
     )
 }
 
-export default Table
+export default Users

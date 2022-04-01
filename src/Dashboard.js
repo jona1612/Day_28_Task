@@ -1,6 +1,5 @@
 import React, { useContext } from 'react'
 import Dashbox from './Dashbox'
-import usContext from './Usercontext'
 
 function Dashboard() {
     let dashboards = [
@@ -29,7 +28,7 @@ function Dashboard() {
             side2: true,
         }
     ]
-    const userContext = useContext(usContext);
+
     return (
         <>
             <div class="container-fluid">
@@ -37,7 +36,7 @@ function Dashboard() {
                     <h1 class="h3 mb-0 ms-3 text-gray-800">Dashboard</h1>
 
                 </div>
-                <p> {userContext.userName}</p>
+                {/* <p> {userName}</p> */}
 
                 <div class="container-fluid">
                     <div class="row">
